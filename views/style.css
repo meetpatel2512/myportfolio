@@ -1,0 +1,615 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif, 'Open Sans';
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --color: #551A8B;
+    --bg-color: #001e36;
+    --home-bg-color: #e7eefe;
+
+}
+
+hr {
+    background-color: var(--bg-color);
+    height: 2.5px;
+}
+/* header css start*/
+.header {
+    position: fixed;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    background-color: white;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color: var(--color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    color: var(--color);
+    font-size: 1.2rem;
+}
+
+.navbar ul li a:hover,
+.drop_down li a:hover {
+    border-bottom: 2px solid #551A8B;
+}
+
+.toggle_btn {
+    font-size: 1.5rem;
+    display: none;
+    margin-right: 2rem;
+    color: var(--color);
+}
+
+.drop_down {
+    position: absolute;
+    /* right: 2rem; */
+    top: 60px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    height: 0;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.drop_down {
+    display: none;
+}
+
+.drop_down li {
+    padding: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop_down li a {
+    display: none;
+    margin: 15px 0;
+    text-decoration: none;
+    color: var(--color);
+}
+
+.drop_down.open {
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    border-radius: 20px;
+    display: none;
+}
+/* header css end*/
+
+/* home section css start */
+.infocontainer {
+    height: calc(100vh - 60px);
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--home-bg-color);
+}
+
+a .cv,
+a .hire {
+    padding: 10px 30px;
+    color: white;
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: #001e36;
+    margin: 7px 0px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+a .cv:hover,
+a .hire:hover {
+    background-color: var(--home-bg-color);
+    color: var(--bg-color);
+    border: 2px solid var(--bg-color);
+    box-shadow: 2px 2px 10px 2px #001e36;
+
+}
+
+button {
+    margin-right: 10px;
+}
+
+.hello {
+    font-size: 45px;
+    margin: 0px 10px;
+
+}
+
+.devname {
+    font-size: 35px;
+    margin: 0px 10px;
+
+}
+
+.devabout {
+    font-size: 25px;
+    margin: 8px 10px;
+
+}
+
+.mypic {
+    display: flex;
+    align-items: center;
+}
+
+.mypic img {
+    height: 65vh;
+    max-width: 80vw;
+    mix-blend-mode: multiply;
+}
+
+.devinfo {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px 40px 0px 30px;
+    color: var(--bg-color);
+}
+
+section>h1 {
+    text-align: center;
+    padding: 70px 20px 20px;
+    color: red;
+    font-size: 2rem;
+}
+
+section:nth-child(odd) {
+    background-color: var(--home-bg-color);
+}
+/* home section css end */
+
+/* about section css start */
+.mainabout {
+    height: 100%;
+}
+
+.myabout {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.part1 {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 340px;
+    /* height: 40vh; */
+    margin: 50px 0;
+}
+
+.part2 {
+    display: flex;
+    flex: 3 1 340px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .part2 .tittle {
+    font-size: 1.5rem;
+    text-align: left;
+    color: var(--bg-color);
+} */
+.part2 .intropara p {
+    margin: 10px;
+    color: var(--bg-color);
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+.myimg {
+    align-self: center;
+}
+
+.myimg img {
+    border: 2px solid black;
+    border-radius: 20px;
+    /* background-color: var(--home-bg-color); */
+    height: 350px;
+    object-fit: cover;
+    padding: 10px;
+    box-shadow: 2px 2px 10px 2px var(--bg-color);
+
+}
+/* about section css end */
+
+/* skill section css start */
+.myskill {
+    height: 100%;
+}
+
+.childskill {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: center;
+    align-content: center;
+    gap: 25px;
+}
+
+.childskill>div {
+    margin: 30px 10px;
+    height: 175px;
+    width: 175px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 10px 2px var(--bg-color);
+    transition: 1s;
+    border-radius: 15px;
+    mix-blend-mode: multiply;
+}
+
+.childskill>div:hover {
+    transform: scale(1.2);
+}
+
+.childskill>div img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.childskill>div p {
+    text-align: center;
+}
+/* skill section css end */
+
+/* project section css start */
+.myproject {
+    height: 100%;
+}
+
+.childproject {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.childproject>div {
+    height: 300px;
+    width: 300px;
+    margin: 30px;
+    cursor: pointer;
+    transition: 1s;
+    mix-blend-mode: multiply;
+    border-radius: 15px;
+}
+
+.childproject>div img {
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.childproject>div:hover {
+    padding: 5px;
+    transform: scale(1.2);
+}
+
+.childproject>div>p {
+    text-align: center;
+}
+/* project section css end */
+
+/* contact section css start */
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.child {
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid black; */
+    margin: 20px;
+    padding: 5px;
+    box-shadow: 2px 2px 10px 2px var(--bg-color);
+}
+
+.para {
+    line-height: 1.2;
+    font-size: 1rem;
+    padding: 20px;
+}
+
+.contact1 {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 320px;
+    /* background-color: white; */
+    border-radius: 20px;
+    margin: 10px;
+    /* min-height: 69vh; */
+}
+
+.contact2 {
+    flex: 1 1 320px;
+    /* background-color: var(--bg-color); */
+    border-radius: 20px;
+    margin: 10px;
+    /* min-height: 69vh; */
+}
+
+.digitalcontact+p {
+    font-size: 1.2rem;
+    margin: 10px 0 10px 10px;
+}
+
+.digitalcontact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px;
+}
+
+.digitalcontact i {
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 10px;
+    color: var(--bg-color);
+}
+
+.location,
+.envelope,
+.phone {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+}
+
+.digitalmedia {
+    gap: 25px;
+    display: flex;
+    margin: 0 0 20px 10px;
+}
+
+.digitaliteam a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    color: white;
+    text-decoration: none;
+}
+
+.digitaliteam:nth-child(1) a:hover {
+    background-color: #3b5998;
+}
+
+.digitaliteam:nth-child(2) a:hover {
+    background-image: linear-gradient(to bottom, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+
+}
+
+.digitaliteam:nth-child(3) a:hover {
+    background-color: #0072b1;
+}
+
+.digitaliteam:nth-child(4) a:hover {
+    background-color: #171515;
+}
+
+.digitaliteam i {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.digitaliteam a i:hover {
+    transform: scale(1.3);
+}
+.contact1 h1,
+.contact2 h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin: 10px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input {
+    height: 50px;
+    width: 40vw;
+    /* border-radius: 10px; */
+    padding: 10px;
+    margin: 7px 0px;
+    color: var(--bg-color);
+    background-color: var(--home-bg-color);
+    border: 2px solid var(--bg-color);
+
+}
+
+textarea {
+    /* border-radius: 10px; */
+    border: 2px solid var(--bg-color);
+    padding: 10px;
+    margin: 7px 0px;
+    resize: none;
+    height: 130px;
+    width: 40vw;
+    color: var(--bg-color);
+    background-color: var(--home-bg-color);
+
+}
+
+input:focus,
+textarea:focus {
+    box-shadow: 2px 2px 10px 2px var(--bg-color);
+
+}
+
+.sbtn {
+    padding: 10px 30px;
+    /* border-radius: 10px; */
+    text-decoration: none;
+    color: var(--bg-color);
+    cursor: pointer;
+    margin: 10px;
+    background-color: var(--home-bg-color);
+
+}
+
+.sbtn:hover {
+    background-color: #001e36;
+    color: white;
+    border: 2px solid white;
+    box-shadow: 2px 2px 10px 2px var(--bg-color);
+
+}
+/* contact section css end */
+
+/* footer section css start */
+.footer {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    height: 80px;
+    width: 100vw;
+}
+.copyright p {
+    color: var(--home-bg-color);
+    font-size: 1rem;
+    margin: 5px;
+}
+/* footer section css end */
+
+/* whatsapp icon css*/
+.whatsapp img {
+    position: fixed;
+    float: right;
+    height: 45px;
+    bottom: 15px;
+    right: 15px;
+
+}
+
+@media screen and (max-width:690px) {
+    .toggle_btn {
+        display: block;
+    }
+
+    .drop_down {
+        display: block;
+        width: unset;
+    }
+
+    .drop_down.open {
+        display: block;
+    }
+
+    .drop_down li a {
+        display: block;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mypic img {
+        display: none;
+    }
+
+    .contact1 h1,
+    .contact2 h1 {
+        text-align: center;
+        margin: 10px;
+    }
+
+    input {
+        height: 40px;
+        width: 75vw;
+    }
+
+    textarea {
+        height: 130px;
+        width: 75vw;
+    }
+
+    .contact1,
+    .contact2 {
+        min-height: 50vh;
+        margin: 5px 0;
+    }
+
+    .childskill {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(4, auto);
+        gap: 10px;
+    }
+
+    .childskill>div {
+        margin: 40px 5px;
+        height: 165px;
+        max-width: 44vw;
+    }
+
+    .myimg img {
+        height: 300px;
+    }
+}
+
+@media screen and (height:360px) {
+    .childskill>div {
+        margin: 40px 5px;
+        height: 150px;
+        width: 150px;
+    }
+}
